@@ -2,7 +2,7 @@ var timerValue = 10;
 var startButton;
 let myFont;
 function preload() {
-    myFont = loadFont('Fonts/Qalisso.otf');
+    myFont = loadFont('MART220_WOOD/HW-Week-3/Fonts/Qalisso.otf');
   }
   
 function setup() {
