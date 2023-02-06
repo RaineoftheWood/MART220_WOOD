@@ -1,4 +1,3 @@
-let myFont;
 var x1 = 300; 
 var y1 = 20 ;
 var x2 = 100;
@@ -13,9 +12,13 @@ var r1 = 10;
 var r2 = 15;
 var r3 = 12;
 var r4 = 20;
+var img;
+var timerValue = 10;
+var startButton;
 // all these variables are for my shapes and one width variable w/ w 
-function preload() {
-  myFont = loadFont('');
+function preload() 
+{
+img = loadImage('.\MART220_WOOD\HW-Week-3\Images\IMG_E2150.JPG');
 }
 function setup() {
     createCanvas(400, 400);
@@ -26,14 +29,12 @@ function setup() {
             x4+=random(50);
             y4+=random(50);
         }
+        Image(img, 0, 0);
    // random things that appear at the beginning, its really confusing 
-   fill('#ED225D');
-   textFont(myFont);
-   textSize(36);
-   text('p5*js', 10, 50);
+   
+   textAlign(CENTER);
+   setInterval(timeIt, 1000);
   }
-
-
   
   function draw() {
     let c = color(255, 210, 20);
@@ -78,6 +79,8 @@ function setup() {
     circle( 150, y2, r4);
     fill(v); 
     createsquare(300, 20, 24);
+   
+
 
     // mustard drops 
      
@@ -149,6 +152,20 @@ function setup() {
             y3 = 0; 
         }
     }
-
+    function timer() {
+        if (timerValue >= 10) {
+          text("0:" + timerValue, width / 2, height / 2);
+        }
+        if (timerValue < 10) {
+          text('0:0' + timerValue, width / 2, height / 2);
+        }
+        if (timerValue == 0) {
+          text('game over', width / 2, height / 2 + 15);
+        }
+      }
+    function timeIt() {
+        if (timerValue > 0) {
+          timerValue--;
+        }
 }
-    
+}
