@@ -1,6 +1,6 @@
 var img;
 function preload() {
-  img = loadImage('C:\Users\otzi3\OneDrive\Pictures\2020-05\IMG_E2150 (1).JPG');
+  img = loadImage('https://i0.wp.com/www.thatwasvegan.com/wp-content/uploads/2012/07/basil-cream-sauce.jpg');
 }
 function setup() {
   image(img, 0, 0);
