@@ -12,16 +12,17 @@ var r1 = 10;
 var r2 = 15;
 var r3 = 12;
 var r4 = 20;
-var img;
 var timerValue = 10;
 var startButton;
+let bg;
+let myFont; 
 // all these variables are for my shapes and one width variable w/ w 
-function preload() 
-{
-img = loadImage('.\MART220_WOOD\HW-Week-3\Images\IMG_E2150.JPG');
+function preload(){
+    myFont = loadFont('./Fonts/Qalisso.otf');
 }
 function setup() {
     createCanvas(400, 400);
+    bg = loadImage('./Images/hot_dog.jpg');
     for(var i = 0; i < 10; i++)
         {
             
@@ -29,11 +30,7 @@ function setup() {
             x4+=random(50);
             y4+=random(50);
         }
-        Image(img, 0, 0);
    // random things that appear at the beginning, its really confusing 
-   
-   textAlign(CENTER);
-   setInterval(timeIt, 1000);
   }
   
   function draw() {
@@ -42,7 +39,7 @@ function setup() {
   let b = color(255, 200, 255 );
   let x = color(2, 150, 50);
   // colors woohooo
-    background(30, 50, 70);
+    background(bg);
    // background above
     fill(x);
     square(-1,170, 409);
@@ -67,10 +64,12 @@ function setup() {
     ellipse(62, 20, 100, 20);
      ellipse(62, 15, 77, 10);
      //my mustard boy above 
-    fill(v)
+    fill(v);
     text( "Mustard", 40, 50);
-    text("& Hotdog", 36, 62);
+    text("& Hotdog", 36, 90);
     fill(c);
+    textFont(myFont);
+    textSize(36);
     text( "Raine Wood",300, 390);
     // this is my text above
     circle( x1, y1, r1);
@@ -79,8 +78,6 @@ function setup() {
     circle( 150, y2, r4);
     fill(v); 
     createsquare(300, 20, 24);
-   
-
 
     // mustard drops 
      
@@ -125,7 +122,32 @@ function setup() {
       {
           y3+=3;
       }
-     
+
+      if (timerValue >= 10) {
+        text("0:" + timerValue, width / 2, height / 2);
+      }
+      if (timerValue < 10) {
+        text('0:0' + timerValue, width / 2, height / 2);
+      }
+      if (timerValue == 0) {
+        text('game over', width / 2, height / 2 + 15);
+      }
+    }
+    if (timerValue >= 10) {
+        text("0:" + timerValue, width / 2, height / 2);
+      }
+      if (timerValue < 10) {
+        text('0:0' + timerValue, width / 2, height / 2);
+      }
+      if (timerValue == 0) {
+        text('game over', width / 2, height / 2 + 15);
+      }
+      
+      function timeIt() {
+        if (timerValue > 0) {
+          timerValue--;
+        }
+
     }
     function createsquare(s,d,f)
     {
@@ -152,20 +174,7 @@ function setup() {
             y3 = 0; 
         }
     }
-    function timer() {
-        if (timerValue >= 10) {
-          text("0:" + timerValue, width / 2, height / 2);
-        }
-        if (timerValue < 10) {
-          text('0:0' + timerValue, width / 2, height / 2);
-        }
-        if (timerValue == 0) {
-          text('game over', width / 2, height / 2 + 15);
-        }
-      }
-    function timeIt() {
-        if (timerValue > 0) {
-          timerValue--;
-        }
+    
+
 }
-}
+    
