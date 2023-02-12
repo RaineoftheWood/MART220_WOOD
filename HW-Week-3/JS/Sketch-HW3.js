@@ -122,16 +122,6 @@ function setup() {
       {
           y3+=3;
       }
-
-      if (timerValue >= 10) {
-        text("0:" + timerValue, width / 2, height / 2);
-      }
-      if (timerValue < 10) {
-        text('0:0' + timerValue, width / 2, height / 2);
-      }
-      if (timerValue == 0) {
-        text('game over', width / 2, height / 2 + 15);
-      }
     }
     if (timerValue >= 10) {
         text("0:" + timerValue, width / 2, height / 2);
