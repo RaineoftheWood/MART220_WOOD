@@ -1,4 +1,4 @@
-class animateCharacter
+class animationImage
 {
 
     constructor(fileNames, x, y, w, h)
