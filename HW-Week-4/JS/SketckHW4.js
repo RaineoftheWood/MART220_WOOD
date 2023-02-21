@@ -1,22 +1,21 @@
 var pumpAnimation; 
-var pumpWalkAnimation;
+//var pumpWalkAnimation;
 var i = 0;
 var j = 0; 
 var idlePaths = [];
-var runPaths = [];
-var walkAnimations = [];
+//var runPaths = [];
+//var walkAnimations = [];
 function preload (){ 
-  idlePaths = loadStrings('./Images/Idle.txt');
-  runPaths = loadStrings('./Images/Walk.txt');
+  idlePaths = loadStrings("./Images/Idle/idlePump.txt");
 }
 function setup(){ 
   createCanvas(900,900);
   pumpAnimation = new animateCharacter(idlePaths, 450, 500, 150, 170);
-  pumpWalkAnimation = new animateCharacter(runPaths, 450, 500, 150, 170);
+  //pumpWalkAnimation = new animateCharacter(runPaths, 450, 500, 150, 170);
 }
 function draw(){
   background(220)
-  if(keyIsPressed){ 
+  /*if(keyIsPressed){ 
     if(key == 'd'){
       pumpWalkAnimation.setCurrentFrameCount(frameCount);
       pumpWalkAnimation.drawAnimation();
@@ -38,5 +37,5 @@ function draw(){
   else{
     pumpAnimation.setCurrentFrameCount(frameCount);
     pumpAnimation.drawAnimation();
-  }
+  }*/
 }
