@@ -1,0 +1,16 @@
+./IMAGES/idle/Idle (1).png
+./IMAGES/idle/Idle (2).png
+./IMAGES/idle/Idle (3).png
+./IMAGES/idle/Idle (4).png
+./IMAGES/idle/Idle (5).png
+./IMAGES/idle/Idle (6).png
+./IMAGES/idle/Idle (7).png
+./IMAGES/idle/Idle (8).png
+./IMAGES/idle/Idle (9).png
+./IMAGES/idle/Idle (10).png
+./IMAGES/idle/Idle (11).png
+./IMAGES/idle/Idle (12).png
+./IMAGES/idle/Idle (13).png
+./IMAGES/idle/Idle (14).png
+./IMAGES/idle/Idle (15).png
+./IMAGES/idle/Idle (16).png
