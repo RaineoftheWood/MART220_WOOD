@@ -1,4 +1,6 @@
 //Variables 
+var r1;
+    var r2;
 var myAnimation;
 var myWalkAnimation;
 //changing variables for animations and movement
@@ -9,12 +11,19 @@ var idlePaths = [];
 var walkPaths = [];
 var walkanimations = [];
 var isColliding = false; 
+var mySound;
+var mySound2;
+var mySound3;
 function preload() {
     idlePaths = loadStrings("./IMAGES/idle/characterIdle.txt");
     walkPaths = loadStrings("./IMAGES/walk/characterWalk.txt");
     mySound = loadSound("./SOUNDS/Flower song.mp3")
+    mySound2 = loadSound("./SOUNDS/GLitch kick.wav")
+    mySound3 = loadSound("./SOUNDS/Squrel Impression.wav")
 }
 function setup(){
+     r1 = new rectangle(100,459,20,40);
+     r2 = new rectangle(750,450,100,50);
     createCanvas(900,900);
     myAnimation = new animationImageHW5(idlePaths, 400, 400, 150, 150); 
     myWalkAnimation = new animationImageHW5( walkPaths, 400, 400, 150, 150);
@@ -28,13 +37,22 @@ function draw(){
     let y = color(255, 200, 0);
     fill (y);
     circle(600, 70, 55);
+    let u = color(190,20,190);
+    fill (u);
+    r1.draw();
+    fill (c);
+    r2.draw();
+    fill(y);
+    text("Burger", 780, 480);
+    textSize(32);
+    text(isColliding, 450, 200 );
     if(keyIsPressed)
     {
         if(key == 'd')
         {
             myWalkAnimation.setCurrentFrameCount(frameCount);
             myWalkAnimation.drawAnimation();
-            isColliding = myWalkAnimation;
+            isColliding = myWalkAnimation.isRectanglesColliding(r2);
             myWalkAnimation.updatePosition('forward');
             myAnimation.updatePosition('forward');
         }
@@ -42,6 +60,8 @@ function draw(){
         {
             myWalkAnimation.setCurrentFrameCount(frameCount);
             myWalkAnimation.drawAnimation();
+            isColliding = myWalkAnimation.isRectanglesColliding(r1);
+            isColliding = myWalkAnimation.Grosssound(mySound2);
             myWalkAnimation.updatePosition('reverse');
             myAnimation.updatePosition('reverse');
         }
@@ -59,16 +79,14 @@ function draw(){
         myAnimation.drawAnimation();
        
     }
-
-    var r1 = new rectangle(800,459,20,40);
-   var r2 = new rectangle(750,450,100,50);
-  textSize(32);
-  text(isColliding, 450, 200 );
     
-  r1.draw();
+   
+ 
+    
+  //r1.draw();
   //r2.draw();
  //  text(isRectanglesColliding(r1,r2), 300,300);
-  text("Burger", 780, 480)
+  
 }
 
 /*function isRectanglesColliding(rec1, rec2){

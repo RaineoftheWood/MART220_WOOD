@@ -1,4 +1,4 @@
-class animationImageHW5
+class animationImage
 {
 
     constructor(fileNames, x, y, w, h)
@@ -85,7 +85,12 @@ class animationImageHW5
             
         }
     }
-    isRectanglesColliding( rec2){
+
+    isRectanglesColliding(rectangle2){
+
+        //return collideRectRect(this.x, this.y, 
+        // this.w, this.h,rectangle2.getX(), rectangle2.getY(),
+        //  rectangle2.getW(), rectangle2.getH());
         var topEdge1 = this.y + this.h;
         var rightEdge1 = this.x + this.w; 
         var leftEdge1 = this.x;
@@ -99,9 +104,7 @@ class animationImageHW5
             return true; 
        }
        return false;
+       
     }
-    Grosssound(mySound2){
-        this.mySound = mySound2;
-        this.mySound.loop = true;
-    }
+    
 }

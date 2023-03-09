@@ -1,6 +1,7 @@
 var mySound;
 function preload() {
- // mySound = loadSound("SOUNDS/Squrel Impression.wav");
+  //create a simple sound 
+ mySound = loadSound("SOUNDS/Squrel Impression.wav");
 }
 
 function setup() {
@@ -10,7 +11,7 @@ function setup() {
 
 function mousePressed() {
     background(20,100,90);
-  // playing a sound file on a user gesture
+  //playing a sound file on a user gesture
  
- // mySound.play();
+  mySound.play();
 }
