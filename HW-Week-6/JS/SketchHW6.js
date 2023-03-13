@@ -61,7 +61,6 @@ function draw(){
             myWalkAnimation.setCurrentFrameCount(frameCount);
             myWalkAnimation.drawAnimation();
             isColliding = myWalkAnimation.isRectanglesColliding(r1);
-            isColliding = myWalkAnimation.Grosssound(mySound2);
             myWalkAnimation.updatePosition('reverse');
             myAnimation.updatePosition('reverse');
         }
@@ -79,7 +78,7 @@ function draw(){
         myAnimation.drawAnimation();
        
     }
-    
+   
    
  
     
