@@ -9,7 +9,7 @@ p5.prototype.registerMethod('init', function p5PlayInit() {
 		throw new Error('planck.js must be loaded before p5play');
 	}
 
-	
+	// store a reference to the p5 instance that p5play is being added to
 	let pInst = this;
 
 	const log = console.log; // shortcut
